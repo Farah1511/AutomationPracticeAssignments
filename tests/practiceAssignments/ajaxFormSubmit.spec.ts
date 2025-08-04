@@ -9,4 +9,6 @@ test("1st Assignment: Form Submit Demo", async({page})=>{
     await name.fill('Farah');
     await msg.fill('Message');
     await submit.click();
+    await expect(page.locator('#btn-submit')).toHaveText('Form submited Successfully!');
+
 });
