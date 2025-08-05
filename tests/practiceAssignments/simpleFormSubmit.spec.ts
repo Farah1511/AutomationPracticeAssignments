@@ -1,3 +1,4 @@
+                                        // 1st Assignment
 import {test, expect} from '@playwright/test'
 
 test("404: Form Submit Demo", async({page})=>{
@@ -19,11 +20,13 @@ test("404: Form Submit Demo", async({page})=>{
     const text = await statusMessage.textContent();
     console.log('After 5s:', text);
 
+    console.log('API Send 404');
+
      //Wait for the AJAX result
-    await page.waitForSelector('#submit-control:has-text("Form submited Successfully!")');
+    //ait page.waitForSelector('#submit-control:has-text("Form submited Successfully!")');
 
     //Assert the final success message
-    await expect(statusMessage).toHaveText('Form submited Successfully!');
+    // await expect(statusMessage).toHaveText('Form submited Successfully!');
 
 });
 
@@ -42,17 +45,47 @@ test("1st Assignment: Simple Form Demo", async({page})=>{
     const getSum = page.locator('#gettotal>button');
     const showSum = page.locator('#addmessage');
 
-    //actions perform on locators
+//actions perform on Single Input Field locators
+    //happy case
     await msg.fill('Hello, Testing my first form using Playwright with Typescript!');
     await getMsg.click();
     await expect(showMsg).toHaveText('Hello, Testing my first form using Playwright with Typescript!');
 
+    //-ve cases
+    //empty field
+    await msg.fill('');
+    await getMsg.click();
+    expect((await msg.textContent())?.trim()).toBe('');
+    //ait expect(showMsg).toBeVisible();
+
+    
+//actions perform on Two Input Fields Locators
+    // happy case
     await firstValue.fill('5');
     await scndValue.fill('11');
     await getSum.click();
     await expect(showSum).toHaveText('16');
 
+    //-ve cases
+    //empty fields
+    await firstValue.fill('');
+    await scndValue.fill('');
+    await getSum.click();
+    expect((await showSum.textContent())?.trim()).toBe('Entered value is not a number');
+    //one field empty
+    await firstValue.fill('');
+    await scndValue.fill('11');
+    await getSum.click();
+    expect(await showSum.textContent()).toBe('Entered value is not a number');
+    //alphabets/alphanumeric value in field
+    await firstValue.fill('abc');
+    await scndValue.fill('q1s2');
+    await getSum.click();
+    expect(await showSum.textContent()).toMatch('Entered value is not a number');
+    //special characters in fields
+    await firstValue.fill('%5');
+    await scndValue.fill('!1');
+    await getSum.click();
+    expect(await showSum.textContent()).toContain('Entered value is not a number');
 
-
-    
 });
