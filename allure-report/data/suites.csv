@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","4166","Negative Cases","firefox","Wed Aug 06 19:53:07 PKT 2025","failed","Wed Aug 06 19:53:11 PKT 2025","2nd Assignment: Input Form Validations","practiceAssignments\inputFormValidations.spec.ts","",""
+"","2444","Negative Cases","chromium","Wed Aug 06 19:52:54 PKT 2025","failed","Wed Aug 06 19:52:57 PKT 2025","2nd Assignment: Input Form Validations","practiceAssignments\inputFormValidations.spec.ts","",""
+"","30034","Happy Case","firefox","Wed Aug 06 19:53:05 PKT 2025","broken","Wed Aug 06 19:53:35 PKT 2025","2nd Assignment: Input Form Validations","practiceAssignments\inputFormValidations.spec.ts","",""
+"","5686","Happy Case","webkit","Wed Aug 06 19:53:23 PKT 2025","failed","Wed Aug 06 19:53:29 PKT 2025","2nd Assignment: Input Form Validations","practiceAssignments\inputFormValidations.spec.ts","",""
+"","685","Negative Cases","webkit","Wed Aug 06 19:53:35 PKT 2025","failed","Wed Aug 06 19:53:36 PKT 2025","2nd Assignment: Input Form Validations","practiceAssignments\inputFormValidations.spec.ts","",""
+"","8641","Happy Case","chromium","Wed Aug 06 19:52:54 PKT 2025","failed","Wed Aug 06 19:53:03 PKT 2025","2nd Assignment: Input Form Validations","practiceAssignments\inputFormValidations.spec.ts","",""
