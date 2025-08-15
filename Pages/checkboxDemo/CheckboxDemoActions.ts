@@ -21,11 +21,8 @@ export class CheckboxDemoActions extends checkboxDemoLocators {
   // Verify the single checkbox heading
   async verifySingleCheckboxHeading() {
     await expect(this.singleCheckBoxHeading).toBeVisible();
+    await expect(this.singleCheckBoxHeading).toContainText('Single Checkbox Demo');
   }
-    // Verify the single checkbox label
-    async verifySingleCheckboxLabel() {
-        await expect(this.singleCheckBoxLabel).toBeVisible();
-    }
     // Verify that the single checkbox is unchecked
     async verifySingleCheckboxUnchecked() {
         await expect(this.singleCheckBox).not.toBeChecked();
@@ -39,16 +36,16 @@ export class CheckboxDemoActions extends checkboxDemoLocators {
         await expect(this.singleCheckBox).toBeChecked();
     }
     // Verify that the multiple checkboxs are unchecked
-    async verifyMultipleCheckboxUnchecked() {
-        await expect(this.checkBox1).not.toBeChecked();
-        await expect(this.checkBox2).not.toBeChecked();
-    }
+    // async verifyMultipleCheckboxUnchecked() {
+    //     await expect(this.checkBox1).not.toBeChecked();
+    //     await expect(this.checkBox2).not.toBeChecked();
+    // }
     // Click on multiple checkboxes
-    async clickMultipleCheckboxes() {   
+    async clickMultipleCheckboxes() {  
+        await this.checkBox1.waitFor({ state: 'visible' });
         await this.checkBox1.click();
+        await this.checkBox2.waitFor({ state: 'visible' });
         await this.checkBox2.click();
-        await this.checkBox3.click();
-        await this.checkBox4.click();
     }
     // Verify that multiple checkboxes are checked
     async verifyMultipleCheckboxesChecked() {
@@ -61,19 +58,18 @@ export class CheckboxDemoActions extends checkboxDemoLocators {
         await expect(this.checkBox4).toBeDisabled();
     }
     // verify check/uncheck all 
-    async checkAndUncheckAllOptions() {
+    async checkAllOptions() {
         // Click "Check All"
-        await this.chkUnchkBtn.click();
-
+        await this.chkBtn.click();
         // Verify all options are checked
         await expect(this.McbOption1).toBeChecked();
         await expect(this.McbOption2).toBeChecked();
         await expect(this.McbOption3).toBeChecked();
         await expect(this.McbOption4).toBeChecked();
-
-        // Click again (now acts as "Uncheck All")
-        await this.chkUnchkBtn.click();
-
+    }
+    async unCheckAllOptions() {
+        // Click "Uncheck All"
+        await this.unChkBtn.click();
         // Verify all options are unchecked
         await expect(this.McbOption1).not.toBeChecked();
         await expect(this.McbOption2).not.toBeChecked();

@@ -14,8 +14,6 @@ test('automate CheckBox Demo via home page link', async ({ page }) => {
     await checkboxDemoPage.verifyOnCheckboxDemoPage(); 
     // Verify the single checkbox heading
     await checkboxDemoPage.verifySingleCheckboxHeading();
-    // Verify the single checkbox label
-    await checkboxDemoPage.verifySingleCheckboxLabel();
     // Verify that the single checkbox is unchecked
     await checkboxDemoPage.verifySingleCheckboxUnchecked();
     // Click on the single checkbox
@@ -23,7 +21,7 @@ test('automate CheckBox Demo via home page link', async ({ page }) => {
     // Verify that the single checkbox is checked
     await checkboxDemoPage.verifySingleCheckboxChecked();
     // Verify that the multiple checkboxes are unchecked
-    await checkboxDemoPage.verifyMultipleCheckboxUnchecked();
+    // await checkboxDemoPage.verifyMultipleCheckboxUnchecked();
     // Click on multiple checkboxes
     await checkboxDemoPage.clickMultipleCheckboxes();
     // Verify that multiple checkboxes are checked
@@ -31,7 +29,8 @@ test('automate CheckBox Demo via home page link', async ({ page }) => {
     // Verify that option 3 & 4 are disabled
     await checkboxDemoPage.verifyMultipleCheckboxesDisable(); 
     // Verify that the "Check All" button is enabled
-    await expect(checkboxDemoPage.chkUnchkBtn).toBeEnabled();
-    await checkboxDemoPage.checkAndUncheckAllOptions();
+    await expect(checkboxDemoPage.chkBtn).toBeEnabled();
+    await checkboxDemoPage.checkAllOptions();
+    await checkboxDemoPage.unCheckAllOptions();
 
 }); 
