@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import  {CheckboxDemoActions} from '../../Pages/checkboxDemo/CheckboxDemoActions';
+import  {CheckboxDemoActions} from '../../Pages/checkboxDemo/checkBoxDemoActions';
 import { mainPageActions } from '../../Pages/mainHomePage/mainHomePageActions'; 
 
 test('automate CheckBox Demo via home page link', async ({ page }) => {

@@ -1,5 +1,5 @@
 import {Page, expect} from '@playwright/test';
-import { checkboxDemoLocators } from './CheckboxDemoLocators';
+import { checkboxDemoLocators } from './checkBoxDemoLocators';
 
 export class CheckboxDemoActions extends checkboxDemoLocators {
   // The page object that will be used to interact with the web page.
