@@ -10,6 +10,8 @@ test('automate JS Alert Box Demo', async ({page}) => {
     await mainLandingPage.openMainHomePage();   
     // Click on Checkbox Demo link dynamically
     await mainLandingPage.clickLink('Javascript Alerts');
+
+    // await page.pause();
  
     // Open the JS Alert Box Demo page
     await jsAlertBoxDemoPage.openJsAlertBoxDemoPage();

@@ -13,6 +13,8 @@ test('Automate Ajax Form via home page link', async ({ page }) => {
   // Click on Ajax Form Submit link dynamically
   await mainLandingPage.clickLink('Ajax Form Submit');
 
+  // await page.pause();
+
   // Verify we landed on correct Ajax Form Submit page
   await ajaxFormPage.verifyOnAjaxFormPage();
 

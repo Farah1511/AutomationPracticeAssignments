@@ -18,6 +18,6 @@ export class ajaxFormLocators{
         this.nameInput = page.locator("#title");
         this.msgInput = page.locator("#description");
         this.submitButton = page.locator('//input[@name="btn-submit"]');
-        this.successMessage = page.locator('#submit-control > img');
+        this.successMessage = page.locator('#submit-control');
     }
 }

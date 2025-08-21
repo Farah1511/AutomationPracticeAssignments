@@ -10,6 +10,9 @@ test('automate CheckBox Demo via home page link', async ({ page }) => {
     await mainLandingPage.openMainHomePage();   
     // Click on Checkbox Demo link dynamically
     await mainLandingPage.clickLink('Checkbox Demo');
+
+    // await page.pause();
+    
     // Verify we landed on correct Checkbox Demo page
     await checkboxDemoPage.verifyOnCheckboxDemoPage(); 
     // Verify the single checkbox heading

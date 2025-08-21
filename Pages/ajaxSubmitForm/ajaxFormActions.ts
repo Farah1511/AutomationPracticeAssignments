@@ -31,9 +31,9 @@ export class AjaxFormActions extends ajaxFormLocators {
   }
 
   async verifySuccessMessageLoader() {
-    // Verify the success message loader appears
-    // await expect(this.successMessage).toBeVisible();
+    // Verify the success message with loader appears
+    await expect(this.successMessage).toHaveText('Ajax Request is Processing!', { timeout: 10000 });
     // Optionally, you can wait for the success message to appear
-   await expect(this.successMessage).toBeVisible({ timeout: 5000 });
+   await expect(this.successMessage).toBeVisible({ timeout: 10000 });
   }
 }
